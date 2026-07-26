@@ -1,27 +1,90 @@
 aid: newvoicemedia
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+    - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/newvoicemedia.png
 name: NewVoiceMedia
-description: 'NewVoiceMedia is a company surfaced as a portfolio company of bessemer-venture-partners
-  and added to the API Evangelist network as a stub for enrichment. Sector: cloud. This profile is a lead
-  awaiting the enrichment pipeline.'
+description: >-
+  NewVoiceMedia is a cloud contact-center (CCaaS) platform founded in the UK and
+  acquired by Vonage in 2018, now delivered as Vonage Contact Center (VCC). Its
+  developer program, still published under the newvoicemedia.com domain and the
+  VCC documentation, exposes a suite of REST APIs for managing customer
+  interactions, agent presence and availability, conversation analytics, call
+  and interaction content (recordings and transcripts), insights and reporting
+  stats, PCI-compliant payments, media channels, user administration, and event
+  webhooks. All APIs authenticate with OAuth 2.0 client-credentials, returning a
+  short-lived Bearer token, and are served from regional API gateways at
+  https://{region}.api.cc.vonage.com.
 url: https://raw.githubusercontent.com/api-evangelist/newvoicemedia/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
-- bessemer-venture-partners
+  - bessemer-venture-partners
 x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-25'
 tags:
-- Company
-- Cloud
-apis: []
+  - Company
+  - Cloud
+  - Contact Center
+  - CCaaS
+  - Communications
+  - Customer Experience
+  - Telephony
+  - Analytics
+apis:
+  - name: Vonage Contact Center Webhooks API
+    description: Subscribe to VCC event notifications delivered over HTTPS and signed with a Vonage-Signature header.
+    humanURL: https://docs-vcc.atlassian.net/wiki/spaces/VCCA/pages/3914399745/Webhooks+API
+    baseURL: https://emea.api.cc.vonage.com
+    properties:
+      - type: Webhooks
+        url: asyncapi/newvoicemedia-webhooks.yml
+      - type: Documentation
+        url: https://docs-vcc.atlassian.net/wiki/spaces/VCCA/pages/3914399745/Webhooks+API
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
-- FN: APIs.json
-  email: info@apis.io
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+  - FN: APIs.json
+    email: info@apis.io
 common:
-- type: Website
-  url: https://www.newvoicemedia.com/en-us
+  - type: Website
+    url: https://www.newvoicemedia.com/en-us
+  - type: DeveloperPortal
+    url: https://docs-vcc.atlassian.net/wiki/spaces/VCCA
+  - type: Documentation
+    url: https://docs-vcc.atlassian.net/wiki/spaces/VCCA/overview
+  - type: GettingStarted
+    url: https://docs-vcc.atlassian.net/wiki/spaces/VCCA/pages/3599630337/Trying+out+Vonage+Contact+Center+APIs
+  - type: Authentication
+    url: authentication/newvoicemedia-authentication.yml
+  - type: OAuthScopes
+    url: scopes/newvoicemedia-scopes.yml
+  - type: Conventions
+    url: conventions/newvoicemedia-conventions.yml
+  - type: Webhooks
+    url: asyncapi/newvoicemedia-webhooks.yml
+  - type: DomainSecurity
+    url: security/newvoicemedia-domain-security.yml
+  - type: LLMsTxt
+    url: llms/newvoicemedia-llms.txt
+  - type: Postman
+    url: https://www.postman.com/vonage/vonage-contact-centre-apis
+  - type: Contact
+    url: https://docs-vcc.atlassian.net/wiki/spaces/VCCA/pages/3568074802
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 6
+  pass: local-v1
