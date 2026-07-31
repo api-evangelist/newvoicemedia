@@ -1,0 +1,32 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs-vcc.atlassian.net/wiki/spaces/VCCA
+docs: https://docs-vcc.atlassian.net/wiki/spaces/VCCA
+notes: >-
+  Cross-cutting request/response semantics for the Vonage Contact Center (VCC,
+  formerly NewVoiceMedia) API suite, captured from the VCCA documentation.
+authentication:
+  style: oauth2-client-credentials
+  header: 'Authorization: Bearer {access_token}'
+  token_endpoint: https://{region}.cc.vonage.com/Auth/connect/token
+  ref: authentication/newvoicemedia-authentication.yml
+regions:
+  style: regional-subdomain
+  base_url: https://{region}.api.cc.vonage.com
+  documented_regions: [emea]
+  note: Requests must be sent to the regional API gateway that hosts the tenant.
+webhooks:
+  supported: true
+  model: subscription
+  signature_header: Vonage-Signature
+  delivery: HTTPS POST to a subscriber-provided fully-qualified https URL
+  ref: asyncapi/newvoicemedia-webhooks.yml
+error_envelope:
+  media_type: application/json
+  note: >-
+    Individual VCC API reference pages document per-endpoint HTTP status codes
+    and JSON error bodies; a unified RFC 9457 problem+json envelope is not
+    advertised across the suite.
+idempotency:
+  supported: unknown
+  note: No provider-wide idempotency-key contract is documented in the VCC API reference.

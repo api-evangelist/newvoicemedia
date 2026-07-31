@@ -1,0 +1,31 @@
+generated: '2026-07-20'
+method: searched
+type: Webhooks
+source: https://docs-vcc.atlassian.net/wiki/spaces/VCCA/pages/3914399745/Webhooks+API
+docs: https://docs-vcc.atlassian.net/wiki/spaces/VCCA/pages/3914399745/Webhooks+API
+spec_type: none
+notes: >-
+  The Vonage Contact Center (VCC, formerly NewVoiceMedia) Webhooks API lets a
+  tenant create subscriptions that push event notifications over HTTPS. No
+  published AsyncAPI document was found; this captures the documented webhook
+  surface. A subscription defines a unique name, a fully-qualified https target
+  URL, and a list of event types (wildcards supported). Notifications are signed
+  with a Vonage-Signature header for verification.
+delivery:
+  transport: https
+  method: POST
+  target_requirement: fully-qualified https URL
+  signature_header: Vonage-Signature
+subscription_management:
+  create: https://docs-vcc.atlassian.net/wiki/spaces/VCCA/pages/3914432546/Create+subscription
+  update: https://docs-vcc.atlassian.net/wiki/spaces/VCCA/pages/3914399801/Update+subscription
+  api_reference: https://docs-vcc.atlassian.net/wiki/spaces/VCCA/pages/3914432513/API+Reference+Webhooks+API
+event_type_catalog:
+  event_types: https://docs-vcc.atlassian.net/wiki/spaces/VCCA/pages/3914432524
+  channel_event_types: https://docs-vcc.atlassian.net/wiki/spaces/VCCA/pages/3913679071/Channel+event+types+Webhooks+API
+  wildcards: true
+  example_event: agent presence change
+security:
+  signed: true
+  signature_header: Vonage-Signature
+  verification: https://docs-vcc.atlassian.net/wiki/spaces/VCCA/pages/4368039953/Verifying+and+responding+to+a+signed+webhook+notification

@@ -1,0 +1,45 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs-vcc.atlassian.net/wiki/spaces/VCCA/pages/3567190030/How+to+authenticate+with+a+Vonage+Contact+Center+(VCC)+API
+docs: https://docs-vcc.atlassian.net/wiki/spaces/VCCA
+notes: >-
+  VCC OAuth 2.0 scopes follow an object:action convention and are requested at
+  token time via the client-credentials flow. This list is captured verbatim
+  from the VCC authentication documentation; individual API reference pages may
+  document additional per-endpoint scopes.
+schemes:
+  - name: OAuth2ClientCredentials
+    flows:
+      - flow: clientCredentials
+        tokenUrl: https://{region}.cc.vonage.com/Auth/connect/token
+scopes:
+  - scope: agents-availability:read
+    description: Read access to the Agent Availability API (query agents by skills and presence).
+    flows: [clientCredentials]
+  - scope: users:read
+    description: Read VCC user details, settings, and presences (User Admin / Agents API).
+    flows: [clientCredentials]
+  - scope: users:write
+    description: Update VCC user details, settings, and presences.
+    flows: [clientCredentials]
+  - scope: interactions:write
+    description: Create and update active interactions (Interactions / Interaction Control API).
+    flows: [clientCredentials]
+  - scope: interaction-content:read
+    description: Read and download interaction content (recordings, transcripts) and schedule exports.
+    flows: [clientCredentials]
+  - scope: interaction-content:delete
+    description: Delete interaction content such as recordings and transcripts.
+    flows: [clientCredentials]
+  - scope: stats
+    description: Access the Insights Stats API for VCC activity metrics.
+    flows: [clientCredentials]
+  - scope: globalpci
+    description: Access the Payment API for PCI-compliant secure payment sessions.
+    flows: [clientCredentials]
+  - scope: admin:read
+    description: Read VCC administration settings.
+    flows: [clientCredentials]
+  - scope: admin:write
+    description: Update VCC administration settings.
+    flows: [clientCredentials]

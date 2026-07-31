@@ -1,0 +1,35 @@
+# NewVoiceMedia (Vonage Contact Center)
+
+> NewVoiceMedia is a cloud contact-center (CCaaS) platform, acquired by Vonage in 2018 and now delivered as Vonage Contact Center (VCC). Its developer surface remains published under the newvoicemedia.com domain and the VCC Confluence docs, exposing a suite of REST APIs for interactions, agents, analytics, content, payments, and webhooks. Authentication is OAuth 2.0 client-credentials returning a Bearer token; requests go to a regional API gateway at https://{region}.api.cc.vonage.com.
+
+## APIs
+- [Authentication API](https://docs-vcc.atlassian.net/wiki/spaces/VCCA/pages/3567190030): OAuth2 client-credentials, issues Bearer access tokens.
+- [Interactions API](https://docs-vcc.atlassian.net/wiki/spaces/VCCA/overview): create and update active interactions.
+- [Interaction Control API](https://docs-vcc.atlassian.net/wiki/spaces/VCCA/overview): control live interactions.
+- [Interaction Content API](https://docs-vcc.atlassian.net/wiki/spaces/VCCA/overview): search interactions, download recordings/transcripts.
+- [Interaction Content Export API](https://docs-vcc.atlassian.net/wiki/spaces/VCCA/overview): schedule content exports to external storage.
+- [Interaction Plan Manager API](https://docs-vcc.atlassian.net/wiki/spaces/VCCA/overview): manage interaction plans.
+- [Agents API](https://docs-vcc.atlassian.net/wiki/spaces/VCCA/overview): set and retrieve agent presence status.
+- [Agent Availability API](https://docs-vcc.atlassian.net/wiki/spaces/VCCA/overview): query agent availability by skills and presence.
+- [Conversation Analyzer API](https://docs-vcc.atlassian.net/wiki/spaces/VCCA/overview): access conversation content and analytics data.
+- [Insights Stats API](https://docs-vcc.atlassian.net/wiki/spaces/VCCA/overview): VCC activity metrics for reporting.
+- [Media Channels API](https://docs-vcc.atlassian.net/wiki/spaces/VCCA/overview): manage media channels.
+- [Payment API](https://docs-vcc.atlassian.net/wiki/spaces/VCCA/overview): PCI-compliant secure payment sessions (globalpci scope).
+- [User Admin API](https://docs-vcc.atlassian.net/wiki/spaces/VCCA/overview): manage VCC users, settings, presences.
+- [Webhooks API](https://docs-vcc.atlassian.net/wiki/spaces/VCCA/pages/3914399745): subscribe to event notifications, signed with Vonage-Signature.
+
+## Auth
+- [How to authenticate with a VCC API](https://docs-vcc.atlassian.net/wiki/spaces/VCCA/pages/3567190030): OAuth 2.0 client-credentials, token endpoint https://{region}.cc.vonage.com/Auth/connect/token.
+- Scopes: agents-availability:read, users:read, users:write, interactions:write, interaction-content:read, interaction-content:delete, stats, globalpci, admin:read, admin:write.
+
+## Docs
+- [Vonage Contact Center APIs (VCCA space)](https://docs-vcc.atlassian.net/wiki/spaces/VCCA)
+- [Trying out VCC APIs](https://docs-vcc.atlassian.net/wiki/spaces/VCCA/pages/3599630337/Trying+out+Vonage+Contact+Center+APIs)
+- [Postman: Vonage Contact Center APIs](https://www.postman.com/vonage/vonage-contact-centre-apis)
+
+## Artifacts
+- authentication/newvoicemedia-authentication.yml
+- scopes/newvoicemedia-scopes.yml
+- conventions/newvoicemedia-conventions.yml
+- asyncapi/newvoicemedia-webhooks.yml
+- security/newvoicemedia-domain-security.yml

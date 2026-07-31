@@ -1,0 +1,29 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs-vcc.atlassian.net/wiki/spaces/VCCA/pages/3567190030/How+to+authenticate+with+a+Vonage+Contact+Center+(VCC)+API
+docs: https://docs-vcc.atlassian.net/wiki/spaces/VCCA
+summary:
+  types: [oauth2]
+  oauth2_flows: [clientCredentials]
+  token_type: Bearer
+notes: >-
+  Vonage Contact Center (VCC, formerly NewVoiceMedia) APIs authenticate with
+  OAuth 2.0 client-credentials. A tenant obtains API credentials (client id +
+  client secret) from the VCC admin portal, then POSTs them to the regional
+  token endpoint to receive a short-lived Bearer access token, which is sent as
+  an Authorization: Bearer header on every API request. Scope is requested at
+  token time (see scopes/newvoicemedia-scopes.yml).
+schemes:
+  - name: OAuth2ClientCredentials
+    type: oauth2
+    flow: clientCredentials
+    token_endpoint: https://{region}.cc.vonage.com/Auth/connect/token
+    grant_type: client_credentials
+    request_encoding: application/x-www-form-urlencoded
+    request_params: [grant_type, client_id, client_secret, scope]
+    token_type: Bearer
+    usage: 'Authorization: Bearer {access_token}'
+    regions_documented: [emea]
+    sources:
+      - https://docs-vcc.atlassian.net/wiki/spaces/VCCA/pages/3568861545/Getting+a+bearer+access+token
+      - https://docs-vcc.atlassian.net/wiki/spaces/VCCA/pages/3599269892/Create+bearer+access+token
