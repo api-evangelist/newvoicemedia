@@ -70,6 +70,11 @@ maintainers:
   - FN: APIs.json
     email: info@apis.io
 common:
+  - type: ParentCompany
+    url: https://apis.io/providers/vonage/
+    name: Vonage
+    x-relationship: acquired
+    x-evidence: "NewVoiceMedia is a cloud contact-center (CCaaS) platform founded in the UK and acquired by Vonage in 2018, now delivered as Vonage Contact Center (VCC)."
   - type: Website
     url: https://www.newvoicemedia.com/en-us
   - type: DeveloperPortal
