@@ -19,6 +19,7 @@ accessModel:
   label: Self-serve signup
   confidence: medium
   source:
+    - {url: 'https://www.newvoicemedia.com/en-us', status: 301, note: 'declared website redirects to https://www.vonage.com/contact-centers/ — a different registrable domain (newvoicemedia.com -> vonage.com), possible rename or acquisition (probed 2026-09-03, roadmap#169)'}
     - authentication
   generated: '2026-07-22'
   method: derived
